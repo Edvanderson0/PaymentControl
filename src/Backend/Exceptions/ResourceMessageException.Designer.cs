@@ -70,6 +70,15 @@ namespace PaymentControl.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email already exists..
+        /// </summary>
+        public static string EMAIL_EXISTS {
+            get {
+                return ResourceManager.GetString("EMAIL_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The email is not valid.
         /// </summary>
         public static string EMAIL_INVALID {
