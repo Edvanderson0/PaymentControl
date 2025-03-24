@@ -9,8 +9,10 @@
         }
         public ResponseErrorDto(string errors)
         {
-            Errors.Add(errors);
-
+            Errors = new List<string>
+            {
+                errors
+            };
         }
     }
 }
