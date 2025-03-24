@@ -1,5 +1,11 @@
+using Mapster;
+using Microsoft.EntityFrameworkCore;
 using PaymentControl.Exceptions.ExceptionBase.ExceptionFilter;
+using PaymentControl.Infraestructure.Data;
+using PaymentControl.Infraestructure.Data.Repositories.User;
+using PaymentControl.Mappers;
 using PaymentControl.UseCases.User.Register;
+using PaymentControl.UseCases.User.Update;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +17,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<PaymentControlDbContext>(option =>
+{
+    option.UseMySql(builder.Configuration.GetConnectionString("mysql"),
+        new MySqlServerVersion(new Version(8,0,4)));
+});
+builder.Services.RegisterMaps();
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionFilter)));
+//UseCases
 builder.Services.AddScoped<IRegisterUserCase, RegisterUserCase>();
+builder.Services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
+//Repository
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
