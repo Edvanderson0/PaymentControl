@@ -8,18 +8,7 @@ namespace PaymentControl.Exceptions.ExceptionBase.ExceptionFilter
     {
         public void OnException(ExceptionContext context)
         {
-            /* //Utilizando o cast para declarar PaymentControl
-            var contextException = context.Exception;
-            var myPaymentControl = (PaymentControlExceptions)contextException;
-            if (contextException is PaymentControlExceptions)
-            {
-                ExceptionHandler(context, myPaymentControl);
-            }
-            else
-            {
-                UnknowException(context);
 
-            }*/
             if(context.Exception is PaymentControlExceptions myPaymentControl)
             {
                 ExceptionHandler(context, myPaymentControl);
