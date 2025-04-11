@@ -4,5 +4,6 @@
     {
         public Task Add(Entities.User user);
         public Task<bool> VerifyEmail(string email);
+        public Task<Entities.User> GetByEmail(string email);
     }
 }

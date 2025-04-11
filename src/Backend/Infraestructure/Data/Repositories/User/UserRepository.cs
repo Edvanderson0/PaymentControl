@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace PaymentControl.Infraestructure.Data.Repositories.User
 {
@@ -21,6 +20,11 @@ namespace PaymentControl.Infraestructure.Data.Repositories.User
         {
             var ifExists = await _context.Users.AnyAsync(user => user.Email == email);
             return ifExists;
+        }
+        public async Task<Entities.User> GetByEmail(string email)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(user => user.Email == email);
+            return user;
         }
     }
 }
