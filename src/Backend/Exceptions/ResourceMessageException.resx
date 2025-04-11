@@ -126,6 +126,15 @@
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>The email is not valid</value>
   </data>
+  <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>The email or password is invalid.</value>
+  </data>
+  <data name="INVALID_ID" xml:space="preserve">
+    <value>The id is invalid.</value>
+  </data>
+  <data name="INVALID_USER" xml:space="preserve">
+    <value>User not found.</value>
+  </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>The name cannot be empty</value>
   </data>
@@ -134,5 +143,8 @@
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Unknown error.</value>
+  </data>
+  <data name="UNMATCH_PASSWORD" xml:space="preserve">
+    <value>The passwords are diferents.</value>
   </data>
 </root>
