@@ -3,7 +3,7 @@ using PaymentControl.Dtos.Request.Login;
 using PaymentControl.Exceptions;
 namespace PaymentControl.Services.Validators.User
 {
-    public class RegisterUserValidator : AbstractValidator<RequestUserDto>
+    public class RegisterUserValidator : AbstractValidator<RequestRegisterUserDto>
     {
         public RegisterUserValidator()
         {
