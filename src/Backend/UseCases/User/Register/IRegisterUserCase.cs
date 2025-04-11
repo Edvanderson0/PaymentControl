@@ -5,7 +5,7 @@ namespace PaymentControl.UseCases.User.Register
 {
     public interface IRegisterUserCase
     {
-        public Task<ResponseUserDto> ExecuteRegister(RequestUserDto user);
+        public Task<ResponseUserDto> ExecuteRegister(RequestRegisterUserDto user);
 
     }
 }
