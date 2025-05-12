@@ -37,7 +37,6 @@ namespace PaymentControl.Controllers
 
         [HttpPut("update-user")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(ResponseErrorDto), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateUser (RequestUpdateUserDto request)
         {
             await _updateUserCase.ExecuteUpdate(request);
@@ -46,7 +45,7 @@ namespace PaymentControl.Controllers
 
         [HttpPut("change-password")]
         [ProducesResponseType (StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(ResponseErrorDto), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseErrorDto), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> ChangePassword(RequestChangeUserPassword request)
         {
             await _changeUserPasswordUseCase.Execute(request);
@@ -55,7 +54,7 @@ namespace PaymentControl.Controllers
 
         [HttpDelete("delete-password")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(ResponseErrorDto), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ResponseErrorDto), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult>DeleteUser(RequestDeleteUserDto request)
         {
             await _deleteUserUseCase.Delete(request);
